@@ -47,7 +47,6 @@ body {
     background-color: var(--clr-neutral-200);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -56,6 +55,7 @@ main {
     padding-inline: 1.5rem;
     padding-block: 3rem;
     border-radius: 5% 5% 25% 5%;
+    max-width: 1000px;
 
     font-family: "Poppins700";
     font-size: 1rem;
@@ -65,10 +65,6 @@ main {
     gap: 4rem;
 }
 
-footer {
-    text-align: center;
-}
-
 .input {
     border-bottom: 1px solid var(--clr-neutral-300);
 }
@@ -76,7 +72,7 @@ footer {
 .inputs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .field {
@@ -88,13 +84,15 @@ footer {
 
 .field label {
     color: var(--clr-neutral-400);
-    font-size: 0.6125rem;
+    font-size: clamp(0.6125rem, 1vw, 0.75rem);
     text-transform: capitalize;
     letter-spacing: 0.15rem;
 }
 
 .field input {
-    font-size: 1.15rem;
+    width: 100%;
+    /* font-size: 1.15rem; */
+    font-size: clamp(1.15rem, 2vw + 0.25rem, 1.5rem);
     padding: 0.715rem;
     margin-top: 0.25rem;
     border: 1px solid var(--clr-neutral-300);
@@ -104,14 +102,14 @@ footer {
 }
 
 .field input::placeholder {
-    color: var(--clr-neutral-300);
+    color: var(--clr-neutral-400);
 }
 
 .button--submit {
     background-color: var(--clr-primary-purple);
     border: none;
-    max-width: 4rem;
-    max-height: 4rem;
+    width: clamp(4rem, 10vw, 6rem);
+    height: clamp(4rem, 10vw, 6rem);
     border-radius: 50%;
     padding: 1rem;
 
@@ -126,10 +124,27 @@ footer {
 
 .output {
     font-family: "Poppins800";
-    font-size: 3rem;
+    font-size: clamp(3rem, 3vw + 3rem, 6.25rem);
 }
 
 .output__num {
     color: var(--clr-primary-purple);
     margin-right: 0.5rem;
+}
+
+@media (width > 600px) {
+    body {
+        justify-content: center;
+        padding-block: 0;
+        padding-inline: 2vw;
+    }
+    main {
+        padding: 4rem;
+    }
+    .inputs {
+        max-width: 75%;
+    }
+    .button--submit {
+        left: 98%;
+    }
 }
