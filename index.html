@@ -26,19 +26,43 @@
                 <div class="inputs">
                     <div class="field">
                         <label for="day">DAY</label>
-                        <input type="text" id="day" placeholder="DD" />
+                        <input
+                            type="text"
+                            id="day"
+                            placeholder="DD"
+                            maxlength="2"
+                            size="1"
+                        />
                     </div>
                     <div class="field">
                         <label for="month">MONTH</label>
-                        <input type="text" id="month" placeholder="MM" />
+                        <input
+                            type="text"
+                            id="month"
+                            placeholder="MM"
+                            maxlength="2"
+                            size="1"
+                        />
                     </div>
                     <div class="field">
                         <label for="year">YEAR</label>
-                        <input type="text" placeholder="YYYY" />
+                        <input
+                            type="text"
+                            placeholder="YY"
+                            maxlength="4"
+                            size="1"
+                        />
                     </div>
                 </div>
-                <button type="button" class="button--submit">submit</button>
+                <button type="button" class="button--submit">
+                    <img
+                        src="./assets/images/icon-arrow.svg"
+                        alt=""
+                        class="img--submit"
+                    />
+                </button>
             </section>
+
             <section class="output">
                 <div class="output__row">
                     <output class="output__num">--</output
