@@ -99,10 +99,16 @@ main {
     border-radius: 10%;
 
     color: var(--clr-neutral-800);
+
+    outline: none;
 }
 
 .field input::placeholder {
     color: var(--clr-neutral-400);
+}
+
+.field input:focus {
+    border-color: var(--clr-primary-purple);
 }
 
 .button--submit {
@@ -116,6 +122,11 @@ main {
     position: relative;
     left: 50%;
     transform: translate(-50%, 50%);
+}
+
+.button--submit:is(:hover, :active) {
+    background-color: var(--clr-neutral-800);
+    cursor: pointer;
 }
 
 .img--submit {
