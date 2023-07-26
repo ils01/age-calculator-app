@@ -111,6 +111,13 @@ main {
     border-color: var(--clr-primary-purple);
 }
 
+[class^="notification"] {
+    margin-top: 0.75em;
+    font-family: "Poppins400";
+    color: var(--clr-primary-red);
+    font-size: 0.8125em;
+}
+
 .button--submit {
     background-color: var(--clr-primary-purple);
     border: none;

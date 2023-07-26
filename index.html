@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="style.css" />
 
         <title>Frontend Mentor | Age calculator app</title>
+        <script src="index.js" defer></script>
     </head>
     <body>
         <main>
@@ -32,6 +33,7 @@
                             placeholder="DD"
                             maxlength="2"
                         />
+                        <span class="notification--day"></span>
                     </div>
                     <div class="field">
                         <label for="month">MONTH</label>
@@ -41,10 +43,17 @@
                             placeholder="MM"
                             maxlength="2"
                         />
+                        <span class="notification--month"></span>
                     </div>
                     <div class="field">
                         <label for="year">YEAR</label>
-                        <input type="text" placeholder="YYYY" maxlength="4" />
+                        <input
+                            type="text"
+                            id="year"
+                            placeholder="YYYY"
+                            maxlength="4"
+                        />
+                        <span class="notification--year"></span>
                     </div>
                 </div>
                 <button type="button" class="button--submit">
@@ -58,15 +67,15 @@
 
             <section class="output">
                 <div class="output__row">
-                    <output class="output__num">--</output
+                    <output class="output__num" id="output-year">--</output
                     ><span class="output__title">years</span>
                 </div>
                 <div class="output__row">
-                    <output class="output__num">--</output
+                    <output class="output__num" id="output-month">--</output
                     ><span class="output__title">months</span>
                 </div>
                 <div class="output__row">
-                    <output class="output__num">--</output
+                    <output class="output__num" id="output-day">--</output
                     ><span class="output__title">days</span>
                 </div>
             </section>
