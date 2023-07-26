@@ -91,6 +91,7 @@ main {
 
 .field input {
     width: 100%;
+    font-family: inherit;
     font-size: clamp(1.15rem, 2vw + 0.25rem, 1.5rem);
     padding: 0.715rem;
     margin-top: 0.25rem;
