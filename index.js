@@ -2,6 +2,9 @@ const submit = document.querySelector(".button--submit");
 const inputDay = document.querySelector("#day");
 const inputMonth = document.querySelector("#month");
 const inputYear = document.querySelector("#year");
+const labelDay = document.querySelector("label[for='day']");
+const labelMonth = document.querySelector("label[for='month']");
+const labelYear = document.querySelector("label[for='year']");
 
 const outputDay = document.querySelector("#output-day");
 const outputMonth = document.querySelector("#output-month");
@@ -12,6 +15,26 @@ const NUMBER_OF_FIELDS = 3;
 const today = new Date();
 
 submit.addEventListener("click", validateInput);
+
+function renderError(isValid) {
+    if (!isValid) {
+        labelDay.classList.add("label--invalid");
+        labelMonth.classList.add("label--invalid");
+        labelYear.classList.add("label--invalid");
+
+        inputDay.classList.add("field--invalid");
+        inputMonth.classList.add("field--invalid");
+        inputYear.classList.add("field--invalid");
+    } else {
+        labelDay.classList.remove("label--invalid");
+        labelMonth.classList.remove("label--invalid");
+        labelYear.classList.remove("label--invalid");
+
+        inputDay.classList.remove("field--invalid");
+        inputMonth.classList.remove("field--invalid");
+        inputYear.classList.remove("field--invalid");
+    }
+}
 
 function validateInput() {
     let flagCount = 0;
@@ -24,7 +47,10 @@ function validateInput() {
     if (inputDay.value <= 31 && flagCount === NUMBER_OF_FIELDS) {
         flagCount += checkDateForValidity(+inputMonth.value, +inputDay.value);
     }
-    if (flagCount === NUMBER_OF_FIELDS + 1) countAge();
+    if (flagCount === NUMBER_OF_FIELDS + 1) {
+        countAge();
+        renderError(true);
+    } else renderError(false);
 }
 
 function checkDateForValidity(month, day) {

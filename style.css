@@ -91,7 +91,6 @@ main {
 
 .field input {
     width: 100%;
-    /* font-size: 1.15rem; */
     font-size: clamp(1.15rem, 2vw + 0.25rem, 1.5rem);
     padding: 0.715rem;
     margin-top: 0.25rem;
@@ -101,6 +100,19 @@ main {
     color: var(--clr-neutral-800);
 
     outline: none;
+}
+
+.field input:focus {
+    outline-color: var(--clr-primary-purple);
+}
+.field input:hover {
+    cursor: pointer;
+}
+input.field--invalid {
+    border-color: var(--clr-primary-red);
+}
+label.label--invalid {
+    color: var(--clr-primary-red);
 }
 
 .field input::placeholder {
